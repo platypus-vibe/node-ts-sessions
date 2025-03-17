@@ -7,6 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const sessionStore = new InMemorySessionStore();
 
+  app.enableCors()
+  
   app.use(
     session({
       secret: 'my-secret',
